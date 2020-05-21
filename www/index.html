@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <!--
+	/***********
+	 * OU TM352 Block 3, TMA03: index.html
+	 * 
+	 * To function correctly this file must be placed in a Cordova project and the appopriate plugins installed.
+	 * You need to complete the code which is commented with TODO.
+	 *
+	 * File created by Chris Thomson 11/10/2019 
+	 * File modified and submitted by: Ilze
+	 ************/
+ --->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"
+    />
+    <meta http-equiv="Content-Security-Policy" content="" />
+
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <title>Taxi Sharing</title>
+  </head>
+  <body>
+    <div class="app">
+      <h1>Taxi Sharing</h1>
+      <div>
+        <!---
+			TODO: add text and form entry methods to capture relevant details
+		-->
+          <label for="name">OUCU:</label><br />
+          <input type="text" id="name" name="name" /><br />
+          <label for="time">Start time:</label><br />
+          <input type="datetime-local" id="time" name="time" /><br />
+          <label for="hours">Will wait for (hours):</label><br />
+          <input type="number" id="hours" name="hours" /><br />
+          <label for="addr">Pickup address:</label><br />
+          <input type="text" id="addr" name="addr" /><br />
+      </div>
+      <div>
+        <!---
+			TODO: add buttons to allow the various functional requirements to be enacted
+		-->
+        <button type="button" id="registerUser" onclick="app.taxiShare.registerUser()">Register</button>
+        <button type="button" id="volunteerTaxi" onclick ="app.taxiShare.volunteerTaxi()">Offer</button>
+        <button type="button" id="requestTaxi" onclick="app.taxiShare.requestTaxi()">Request</button>
+        <button type="button" id="cancel" onclick="app.taxiShare.cancel()">Cancel</button>
+        <button type="button" id="beginUpdatingMap" onclick="app.taxiShare.beginUpdatingMap()">Start updates</button>
+        <button type="button" id="stopUpdatingMap" onclick="app.taxiShare.stopUpdatingMap()">Stop updates</button>
+      </div><br />
+      <!---
+			TODO: add a placeholder for the HERE map
+        -->
+        <div style="width: 100%; height: 40%" id="MAP_ID"></div>
+        <div><br />
+        <button type="button" id="showAlternatives" onclick="app.taxiShare.showAlternatives()">Show alternatives</button>
+        <button type="button" id="photo" onclick="app.taxiShare.photo()">Photo</button>
+        <img style="width:100%;height:40%;" id="image" src="img/logo.png" />
+        </div>
+ </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://js.api.here.com/v3/3.0/mapsjs-core.js"
+      charset="utf-8"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://js.api.here.com/v3/3.0/mapsjs-service.js"
+      charset="utf-8"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"
+      charset="utf-8"
+    ></script>
+    <script
+      type="text/javascript"
+      src="http://js.api.here.com/v3/3.0/mapsjs-ui.js"
+      charset="utf-8"
+    ></script>
+    <script
+      type="text/javascript"
+      src="http://js.api.here.com/v3/3.0/mapsjs-pano.js"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://js.api.here.com/v3/3.0/mapsjs-ui.css"
+    />
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
+</html>
