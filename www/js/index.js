@@ -255,8 +255,8 @@ var app = {
     function intialiseMap() {
       // initialize the platform object:
       var platform = new H.service.Platform({
-        app_id: "", // TODO: Change to your own APP_ID
-        app_code: "", // TODO: Change to your own APP_CODE
+        // app_id: "", // TODO: Change to your own APP_ID
+        // app_code: "", // TODO: Change to your own APP_CODE
       })
       // obtain the default map types from the platform object
       var defaultLayers = platform.createDefaultLayers()
@@ -391,16 +391,7 @@ var app = {
               end_time
           )
         } else {
-          alert(
-            "Error: User " +
-              oucu +
-              " has already offered a ride from " +
-              address +
-              " from " +
-              start_time +
-              " to " +
-              end_time
-          )
+          alert(obj.status + obj.message)
         }
       }
 
@@ -438,14 +429,7 @@ var app = {
               start_time
           )
         } else {
-          alert(
-            "Error: User " +
-              oucu +
-              " has already requested a ride from " +
-              address +
-              " from " +
-              start_time
-          )
+          alert(obj.status + obj.message)
         }
       }
 
